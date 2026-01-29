@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/chbrandt/sqaaas-assessment:
+      branch: main
+      repo: https://github.com/chbrandt/sqaaas-assessment
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/chbrandt/sqaaas-assessment git:
+        commands:
+        - /usr/bin/env sh .sqa/script.slimy-ivory-squid.sh
+        container: qc.acc_scanty-teal-havanese
+  QC.Doc:
+    repos:
+      github.com/chbrandt/sqaaas-assessment find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-eggplant-flounder.sh
+        container: qc.doc_goopy-cardinal-panda
+      github.com/chbrandt/sqaaas-assessment git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-russet-crane.sh
+        container: qc.doc_wimpy-cerise-oyster
+      github.com/chbrandt/sqaaas-assessment markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sunny-buff-neanderthal.sh
+        container: qc.doc_woozy-cinnabar-uakari
+  QC.Lic:
+    repos:
+      github.com/chbrandt/sqaaas-assessment licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.scanty-russet-elephant.sh
+        container: qc.lic_muggy-ivory-chicken
+  QC.Sec:
+    repos:
+      github.com/chbrandt/sqaaas-assessment bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-carmine-cuscus.sh
+        container: qc.sec_scaly-scarlet-mole
+  QC.Sty:
+    repos:
+      github.com/chbrandt/sqaaas-assessment flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.foggy-russet-hare.sh
+        container: qc.sty_gimpy-ruby-quoll
+  QC.Uni:
+    repos:
+      github.com/chbrandt/sqaaas-assessment pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-viridian-chameleon.sh
+        container: qc.uni_leaky-pear-squid
+  QC.Ver:
+    repos:
+      github.com/chbrandt/sqaaas-assessment get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-razzmatazz-mist.sh
+        container: qc.ver_squeaky-seashell-yak
+timeout: 5400
