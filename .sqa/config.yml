@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: main
+      branch: feature/Ophidia
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/chbrandt/sqaaas-assessment:
       branch: main
@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/chbrandt/sqaaas-assessment git:
         commands:
-        - /usr/bin/env sh .sqa/script.slimy-ivory-squid.sh
-        container: qc.acc_scanty-teal-havanese
+        - /usr/bin/env sh .sqa/script.seedy-mauve-sheepdog.sh
+        container: qc.acc_homely-eggplant-tortoise
   QC.Doc:
     repos:
       github.com/chbrandt/sqaaas-assessment find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.crabby-eggplant-flounder.sh
-        container: qc.doc_goopy-cardinal-panda
+        - /usr/bin/env sh .sqa/script.smelly-bistre-chinchilla.sh
+        container: qc.doc_shaky-teal-gecko
       github.com/chbrandt/sqaaas-assessment git:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-russet-crane.sh
-        container: qc.doc_wimpy-cerise-oyster
+        - /usr/bin/env sh .sqa/script.woozy-eggplant-frigatebird.sh
+        container: qc.doc_flimsy-gamboge-wombat
       github.com/chbrandt/sqaaas-assessment markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-buff-neanderthal.sh
-        container: qc.doc_woozy-cinnabar-uakari
+        - /usr/bin/env sh .sqa/script.blurry-dandelion-albatross.sh
+        container: qc.doc_shaggy-lilac-iguana
   QC.Lic:
     repos:
       github.com/chbrandt/sqaaas-assessment licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-russet-elephant.sh
-        container: qc.lic_muggy-ivory-chicken
+        - /usr/bin/env sh .sqa/script.surly-gold-cuttlefish.sh
+        container: qc.lic_hilly-khaki-duck
   QC.Sec:
     repos:
       github.com/chbrandt/sqaaas-assessment bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.crabby-carmine-cuscus.sh
-        container: qc.sec_scaly-scarlet-mole
+        - /usr/bin/env sh .sqa/script.nippy-tan-skunk.sh
+        container: qc.sec_cranky-gamboge-molly
   QC.Sty:
     repos:
       github.com/chbrandt/sqaaas-assessment flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-russet-hare.sh
-        container: qc.sty_gimpy-ruby-quoll
+        - /usr/bin/env sh .sqa/script.surly-yellow-wombat.sh
+        container: qc.sty_cheeky-magenta-discus
   QC.Uni:
     repos:
       github.com/chbrandt/sqaaas-assessment pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.zippy-viridian-chameleon.sh
-        container: qc.uni_leaky-pear-squid
+        - /usr/bin/env sh .sqa/script.stinky-saffron-havanese.sh
+        container: qc.uni_sleepy-fuchsia-maltese
   QC.Ver:
     repos:
       github.com/chbrandt/sqaaas-assessment get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-razzmatazz-mist.sh
-        container: qc.ver_squeaky-seashell-yak
+        - /usr/bin/env sh .sqa/script.queasy-mauve-mongrel.sh
+        container: qc.ver_queasy-champagne-burmese
 timeout: 5400
